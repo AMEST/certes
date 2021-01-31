@@ -22,4 +22,4 @@ jobs:
     - name: Pack package
       run: dotnet pack ./src/Certes/Certes.csproj -c Release --no-build -p:PackageVersion=${{ steps.version.outputs.version }} -p:PackageID=Nightly-Certes -p:Title="Unstable master build of Certes ACME Client"
     - name: Publish
-      run: dotnet nuget push ./src/Certes/bin/Release/*.nupkg --skip-duplicate -s http://nuget.org/ -k ${{secrets.NUGET_PUBLISH_KEY}}
+      run: Get-ChildItem -Path ./src/**/*.nupkg -Recurse -Force | % { dotnet nuget push $_.ToString() --skip-duplicate -s http://nuget.org/ -k ${{secrets.NUGET_PUBLISH_KEY}} }
