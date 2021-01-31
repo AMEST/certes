@@ -10,9 +10,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: run minver
+    - name: action-minver
+      uses: thefringeninja/action-minver@2.0.0-preview1
       id: version
-      uses: thefringeninja/action-minver
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:

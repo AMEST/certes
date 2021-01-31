@@ -138,6 +138,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 Also check the [changelog](CHANGELOG.md) to see what's we are working on.
 
 ## CI Status
+![Certes nightly publish (build and publish master)](https://github.com/AMEST/certes/workflows/Certes%20nightly%20publish%20(build%20and%20publish%20master)/badge.svg)
+
 [![NuGet](https://img.shields.io/nuget/vpre/certes.svg?label=Certes)](https://www.nuget.org/packages/certes/absoluteLatest/)
 [![NuGet](https://img.shields.io/nuget/dt/certes.svg)](https://www.nuget.org/packages/certes/)
 [![NuGet](https://img.shields.io/nuget/vpre/dotnet-certes.svg?label=CLI)](https://www.nuget.org/packages/dotnet-certes/absoluteLatest/)
