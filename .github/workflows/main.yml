@@ -5,7 +5,7 @@ on:
     
 jobs:
   publish-nuget:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
@@ -17,10 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.402'
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build ./src/Certes/Certes.csproj --configuration Release --no-restore
+    - name: Restore and Build
+      run: dotnet build ./src/Certes/Certes.csproj --configuration Release
     - name: Pack package
       run: dotnet pack ./src/Certes/Certes.csproj -c Release --no-build -p:PackageVersion=${{ steps.version.outputs.version }} -p:PackageID=Nightly-Certes -p:Title="Unstable master build of Certes ACME Client"
     - name: Publish
